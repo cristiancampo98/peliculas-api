@@ -33,7 +33,7 @@ class FilmResource extends JsonResource
 
     public function isNovelty($param)
     {
-        $date = Carbon::today();
+        $date = Carbon::today('America/Bogota');
         return $param >= $date->subWeeks(3) ? true : false;
     }
 

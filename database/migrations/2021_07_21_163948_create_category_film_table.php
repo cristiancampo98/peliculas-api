@@ -16,7 +16,7 @@ class CreateCategoryFilmTable extends Migration
         Schema::create('category_film', function (Blueprint $table) {
             $table->id();
             $table->foreignId('film_id')->constrained('films');
-            $table->string('category_id')->constrained('categories');
+            $table->foreignId('category_id')->constrained('categories');
             $table->timestamps();
         });
     }

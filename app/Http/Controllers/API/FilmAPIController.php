@@ -19,7 +19,7 @@ class FilmAPIController extends Controller
      */
     public function index()
     {
-        $data = Carbon::today();
+        $data = Carbon::today('America/Bogota');
         $films = Film::whereDate('release_date', '>=', $data->subWeeks(3))->get();
         return response()->json(FilmResource::collection($films), 200);
     }
